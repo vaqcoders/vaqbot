@@ -5,7 +5,7 @@
 */
 
 const Discord = require("discord.js"),
-      bot = new Discord.Client();
+      bot = new Discord.Client({autorun: true});
 
 bot.on("ready", () => {
   console.log("I am ready!");
@@ -15,10 +15,6 @@ bot.on("message", (user, userID, channelID, message, event) => {
   // Our bot needs to know if it will execute a command
   // It will listen for messages that will start with `!`
   if (message[0] == "!") {
-    bot.sendMessage({
-      to: channelID,
-      message: "Hi!"
-    });
     let args = message.substring(1).split(" ");
     switch(args[0]) {
       case "vaq":
