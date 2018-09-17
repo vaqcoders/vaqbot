@@ -14,11 +14,9 @@ bot.on("ready", () => {
 bot.on("message", (user, userID, channelID, message, event) => {
   // Our bot needs to know if it will execute a command
   // It will listen for messages that will start with `!`
-  if (message.substring(0, 1) == "!") {
-    let args = message.substring(1).split(" "),
-        cmd = args[0];
-    args = args.splice(1);
-    switch(cmd) {
+  if (message[0] == "!") {
+    let args = message.substring(1).split(" ");
+    switch(args[0]) {
       case "vaq":
         bot.sendMessage({
           to: channelID,
