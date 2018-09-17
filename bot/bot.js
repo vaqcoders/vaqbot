@@ -49,3 +49,6 @@ bot.on("message", (user, userID, channelID, message, event) => {
     }
   }
 });
+
+// This must be this way!
+client.login(process.env.BOT_TOKEN);
