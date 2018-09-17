@@ -1,6 +1,6 @@
 /*
   `~-,-~'`~-,-~'`~-,-~' Information `~-,-~'`~-,-~'`~-,-~'
-  Docs: https://discordapp.com/developers/docs/intro
+  Discord.js Docs: https://discord.js.org/#/docs/main/stable/general/welcome
   VaqBot: https://discordapp.com/developers/applications/491092896490061836/bots
 */
 
@@ -21,7 +21,7 @@ bot.on("message", msg => {
         msg.channel.send("Coders!");
         break;
       case "greet":
-        msg.channel.send(`Hello, ${event.author.username}!`);
+        msg.channel.send(`Hello, ${msg.author.username}!`);
         break;
       // Just add any case commands if you want to..
     }
