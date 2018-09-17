@@ -1,11 +1,11 @@
 # VaqBot
 Repository for Rancho Alamitos High School Vaqcoders Discord server bot.
 
-[Discord.js Docs](https://discord.js.org/#/docs/main/stable/general/welcome)
-[VaqBot pn Discord](https://discordapp.com/developers/applications/491092896490061836/bots)
+* [Discord.js Docs](https://discord.js.org/#/docs/main/stable/general/welcome)
+* [VaqBot on Discord](https://discordapp.com/developers/applications/491092896490061836/bots)
 
 ```
-on message event = Message {
+Discord.js Message Object = Message {
   channel:
    TextChannel {
      type: 'text',
