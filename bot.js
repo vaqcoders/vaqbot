@@ -18,16 +18,10 @@ bot.on("message", event => {
     let args = event.content.substring(1).split(" ");
     switch(args[0]) {
       case "vaq":
-        bot.sendMessage({
-          to: event.channel.id,
-          message: "Coders!"
-        });
+        bot.reply("Coders!");
         break;
       case "greet":
-        bot.sendMessage({
-          to: event.channel.id,
-          message: `Hello, ${event.author.username}!`
-        });
+        bot.reply(`Hello, ${event.author.username}!`);
         break;
       // Just add any case commands if you want to..
     }
