@@ -1,10 +1,12 @@
 # VaqBot
 Repository for Rancho Alamitos High School Vaqcoders Discord server bot.
 
-[Discord Documentation](https://discordapp.com/developers/docs/intro)
+[Discord.js Docs](https://discord.js.org/#/docs/main/stable/general/welcome)
+[VaqBot pn Discord](https://discordapp.com/developers/applications/491092896490061836/bots)
 
+```
 on message event = Message {
-  channel: 
+  channel:
    TextChannel {
      type: 'text',
      id: '491135619515285505',
@@ -13,7 +15,7 @@ on message event = Message {
      permissionOverwrites: Collection {},
      topic: null,
      lastMessageID: '491147335296876565',
-     guild: 
+     guild:
       Guild {
         members: [Object],
         channels: [Object],
@@ -44,7 +46,7 @@ on message event = Message {
   id: '491147335296876565',
   type: 'DEFAULT',
   content: '!vaq',
-  author: 
+  author:
    User {
      id: '260901399729012736',
      username: 'EthanThatOneKid',
@@ -53,9 +55,9 @@ on message event = Message {
      bot: false,
      lastMessageID: '491147335296876565',
      lastMessage: [Circular] },
-  member: 
+  member:
    GuildMember {
-     guild: 
+     guild:
       Guild {
         members: [Object],
         channels: [Object],
@@ -80,7 +82,7 @@ on message event = Message {
         ownerID: '260901399729012736',
         _rawVoiceStates: Collection {},
         emojis: [Object] },
-     user: 
+     user:
       User {
         id: '260901399729012736',
         username: 'EthanThatOneKid',
@@ -110,13 +112,13 @@ on message event = Message {
   createdTimestamp: 1537169049811,
   editedTimestamp: null,
   reactions: Collection {},
-  mentions: 
+  mentions:
    MessageMentions {
      everyone: false,
      users: Collection {},
      roles: Collection {},
      _content: '!vaq',
-     _client: 
+     _client:
       Client {
         domain: null,
         _events: [Object],
@@ -142,7 +144,7 @@ on message event = Message {
         pings: [Array],
         _timeouts: [Object],
         _intervals: [Object] },
-     _guild: 
+     _guild:
       Guild {
         members: [Object],
         channels: [Object],
@@ -173,3 +175,4 @@ on message event = Message {
   hit: null,
   _edits: []
 }
+```
