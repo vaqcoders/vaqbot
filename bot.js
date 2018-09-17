@@ -11,17 +11,17 @@ bot.on("ready", () => {
   console.log("I am ready!");
 });
 
-bot.on("message", event => {
+bot.on("message", msg => {
   // Our bot needs to know if it will execute a command
   // It will listen for messages that will start with `!`
-  if (event.content.substring(0, 1) == "!") {
-    let args = event.content.substring(1).split(" ");
+  if (msg.content.substring(0, 1) == "!") {
+    let args = msg.content.substring(1).split(" ");
     switch(args[0]) {
       case "vaq":
-        bot.reply("Coders!");
+        msg.channel.send("Coders!");
         break;
       case "greet":
-        bot.reply(`Hello, ${event.author.username}!`);
+        msg.channel.send(`Hello, ${event.author.username}!`);
         break;
       // Just add any case commands if you want to..
     }
