@@ -11,27 +11,22 @@ bot.on("ready", () => {
   console.log("I am ready!");
 });
 
-bot.on("message", (user, userID, channelID, message, event) => {
-  console.log(user);
-  console.log(userID);
-  console.log(channelID)
-  console.log(message);
-  console.log(event);
+bot.on("message", event => {
   // Our bot needs to know if it will execute a command
   // It will listen for messages that will start with `!`
-  if (message.content.substring(0, 1) == "!") {
-    let args = message.content.substring(1).split(" ");
+  if (event.content.substring(0, 1) == "!") {
+    let args = event.content.substring(1).split(" ");
     switch(args[0]) {
       case "vaq":
         bot.sendMessage({
-          to: channelID,
+          to: event.channel.id,
           message: "Coders!"
         });
         break;
       case "greet":
         bot.sendMessage({
-          to: channelID,
-          message: `Hello, ${user}!`
+          to: event.channel.id,
+          message: `Hello, ${event.author.username}!`
         });
         break;
       // Just add any case commands if you want to..
