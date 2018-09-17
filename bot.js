@@ -7,6 +7,9 @@
 const Discord = require("discord.js"),
       bot = new Discord.Client({autorun: true});
 
+const emoji = require("emoji.json");
+
+
 bot.on("ready", () => {
   console.log("I am ready!");
 });
@@ -26,10 +29,18 @@ bot.on("message", msg => {
       case "love":
         msg.channel.send(":heart:");
         break;
+      case "food":
+        let gimmePossibleFoods = getEmoji("food");
+        let gimmeFood = gimmePossibleFoods[Math.floor(Math.random() * gimmePossibleFoods.length)];
+        msg.channel.send(`Here's some ${gimmeFood.name}, ${msg.author.username}. ${emoji[366]} ${gimmeFood.char}`);
+        break;
       // Just add any case commands if you want to..
     }
   }
 });
+
+// Helper Functions
+function getEmoji = keyword => emoji.filter(item => items.keywords.includes(keyword));
 
 // This must be this way!
 bot.login(process.env.BOT_TOKEN);
