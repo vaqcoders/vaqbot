@@ -1,4 +1,4 @@
-# vaqbot
-Repository for Rancho Alamitos High School Vaqcoders Discord server bot
+# VaqBot
+Repository for Rancho Alamitos High School Vaqcoders Discord server bot.
 
-[How to make a Discord Bot article](https://www.digitaltrends.com/gaming/how-to-make-a-discord-bot/)
+[Discord Documentation](https://discordapp.com/developers/docs/intro)
