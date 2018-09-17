@@ -40,7 +40,7 @@ bot.on("message", msg => {
 });
 
 // Helper Functions
-const getEmoji = keyword => emoji.filter(item => items.keywords.includes(keyword));
+const getEmoji = keyword => emoji.filter(item => item.keywords.includes(keyword));
 
 // This must be this way!
 bot.login(process.env.BOT_TOKEN);
