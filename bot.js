@@ -23,6 +23,9 @@ bot.on("message", msg => {
       case "greet":
         msg.channel.send(`Hello, ${msg.author.username}!`);
         break;
+      case "love":
+        msg.channel.send(":heart:");
+        break;
       // Just add any case commands if you want to..
     }
   }
