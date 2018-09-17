@@ -3,6 +3,7 @@ Repository for Rancho Alamitos High School Vaqcoders Discord server bot.
 
 * [Discord.js Docs](https://discord.js.org/#/docs/main/stable/general/welcome)
 * [VaqBot on Discord](https://discordapp.com/developers/applications/491092896490061836/bots)
+* [VaqBot on Heroku](https://dashboard.heroku.com/apps/vaqbot/)
 
 ```
 Discord.js Message Object = Message {
