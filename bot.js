@@ -32,7 +32,7 @@ bot.on("message", msg => {
       case "food":
         let gimmePossibleFoods = getEmoji("food");
         let gimmeFood = gimmePossibleFoods[Math.floor(Math.random() * gimmePossibleFoods.length)];
-        msg.channel.send(`Here's some ${gimmeFood.name}, ${msg.author.username}. ${emoji[366]} ${gimmeFood.char}`);
+        msg.channel.send(`Here's some ${gimmeFood.name}, ${msg.author.username}. ${emoji[366].char} ${gimmeFood.char}`);
         break;
       // Just add any case commands if you want to..
     }
