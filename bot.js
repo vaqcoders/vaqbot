@@ -4,35 +4,21 @@
   VaqBot: https://discordapp.com/developers/applications/491092896490061836/bots
 */
 
-const Discord = require("discord.io"),
-      logger = require("winston"),
-      auth = require("./auth.json");
+const Discord = require("discord.js"),
+      bot = new Discord.Client();
 
-// Configure logger settings
-logger.remove(logger.transports.Console);
-logger.add(new logger.transports.Console, {colorize: true});
-logger.level = "debug";
-
-// Initialize Discord Bot
-const bot = new Discord.Client({
-  token: auth.token,
-  autorun: true
-});
-
-bot.on("ready", event => {
-  logger.info("Connected");
-  logger.info(`Logged in as: ${bot.username} (${bot.id})`);
+bot.on("ready", () => {
+  console.log("I am ready!");
 });
 
 bot.on("message", (user, userID, channelID, message, event) => {
   // Our bot needs to know if it will execute a command
   // It will listen for messages that will start with `!`
   if (message.substring(0, 1) == "!") {
-    var args = message.substring(1).split(" ");
-    var cmd = args[0];
+    let args = message.substring(1).split(" "),
+        cmd = args[0];
     args = args.splice(1);
     switch(cmd) {
-      // !ping
       case "vaq":
         bot.sendMessage({
           to: channelID,
@@ -51,4 +37,4 @@ bot.on("message", (user, userID, channelID, message, event) => {
 });
 
 // This must be this way!
-client.login(process.env.BOT_TOKEN);
+bot.login(process.env.BOT_TOKEN);
