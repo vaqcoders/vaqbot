@@ -29,6 +29,9 @@ bot.on("message", msg => {
       case "love":
         msg.channel.send(":heart:");
         break;
+      case "bye":
+        msg.channel.send("rip... :broken_heart:");
+        break;
       case "food":
         let gimmePossibleFoods = getEmoji("food");
         let gimmeFood = gimmePossibleFoods[Math.floor(Math.random() * gimmePossibleFoods.length)];
