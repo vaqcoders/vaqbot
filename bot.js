@@ -1,7 +1,6 @@
 /*
   `~-,-~'`~-,-~'`~-,-~' Information `~-,-~'`~-,-~'`~-,-~'
   Discord.js Docs: https://discord.js.org/#/docs/main/stable/general/welcome
-  VaqBot: https://discordapp.com/developers/applications/491092896490061836/bots
 */
 
 const Discord = require("discord.js"),
