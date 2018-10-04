@@ -32,7 +32,7 @@ bot.on("message", msg => {
         msg.channel.send("rip... :broken_heart:");
         break;
       case "wah":
-        msg.channel.send("I'm sorry... :sad:");
+        msg.channel.send("I'm sorry... :cry:");
         break;
       case "food":
         let gimmePossibleFoods = getEmoji("food");
