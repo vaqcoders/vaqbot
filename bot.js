@@ -49,10 +49,12 @@ bot.on("message", msg => {
       case "iwannabetheverybest":
         msg.channel.send("LIKE NO ONE EVER WAS!!!:smiley:");
         break;
-        
+      
+      /* Never use this lol
       case "10printgoto10":
         msg.channel.send("!10printgoto10");
         break;
+      */
 
       case "food":
         let gimmePossibleFoods = getEmoji("food");
