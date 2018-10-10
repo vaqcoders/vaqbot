@@ -36,11 +36,11 @@ bot.on("message", msg => {
 
       case "goodnight":
         const opt = randSelect([
-          ¨Sweet dreams¨,
-          ¨Good night¨,
-          ¨\*goodnight kiss\*¨,
-          ¨Sleep tight¨,
-          ¨Don´t let the vaq bugs bite you¨
+          "Sweet dreams",
+          "Good night",
+          "\*goodnight kiss\*",
+          "Sleep tight",
+          "Don´t let the vaq bugs bite you"
         ]);
         msg.channel.send(`${opt}, ${msg.author.username}! :sleeping:`);
         break;
