@@ -34,6 +34,17 @@ bot.on("message", msg => {
         msg.channel.send(`${msg.author.username} is the hottest person alive! :heart:`);
         break;
 
+      case "goodnight":
+        const opt = randSelect([
+          ¨Sweet dreams¨,
+          ¨Good night¨,
+          ¨\*goodnight kiss\*¨,
+          ¨Sleep tight¨,
+          ¨Don´t let the vaq bugs bite you¨
+        ]);
+        msg.channel.send(`${opt}, ${msg.author.username}! :sleeping:`);
+        break;
+        
       case "love":
         msg.channel.send(":heart:");
         break;
@@ -70,6 +81,7 @@ bot.on("message", msg => {
 
 // Helper Functions
 const getEmoji = keyword => emoji.filter(item => item.keywords.includes(keyword));
+const randSelect = arr => arr[Math.floor(Math.random() * arr.length)];
 
 // This must be this way!
 bot.login(process.env.BOT_TOKEN);
