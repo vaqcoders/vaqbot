@@ -50,7 +50,7 @@ bot.on("message", msg => {
           "Good morning",
           "Praise the sun",
           "Don't be late to school",
-          ":rooster: Cockadoodledoo"
+          ":rooster: Cockadoodledoo",
           "I am woke"
         ]);
         msg.channel.send('${opt}, ${msg.author.username}! :sunny:');
