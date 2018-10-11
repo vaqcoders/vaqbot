@@ -92,10 +92,6 @@ bot.on("message", msg => {
         msg.channel.send("uwu");
         break;
 
-      case "aburr":
-        msg.channel.send("Ethan Davidson is the best and coolest president luhmao xd teehee");
-        break;
-
       /* Never use this lol
       case "10printgoto10":
         msg.channel.send("!10printgoto10");
@@ -131,7 +127,7 @@ const rockpaperscissors = choice => {
     scissors: ":v:"
   };
   if (choice == response) {
-    return {opt: dict[response], status: "draw"};
+    return {opt: dict[response], status: "tied"};
   } else if (
     (choice == "rock" && response == "scissors") ||
     (choice == "paper" && response == "rock") ||
