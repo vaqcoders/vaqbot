@@ -131,7 +131,7 @@ const rockpaperscissors = choice => {
     scissors: ":v:"
   };
   if (choice == response) {
-    return {opt: dict[opt], status: "draw"};
+    return {opt: dict[response], status: "draw"};
   } else if (
     (choice == "rock" && response == "scissors") ||
     (choice == "paper" && response == "rock") ||
