@@ -53,7 +53,7 @@ bot.on("message", msg => {
           ":rooster: Cockadoodledoo",
           "I am woke"
         ]);
-        msg.channel.send('${opt}, ${msg.author.username}! :sunny:');
+        msg.channel.send(`${opt}, ${msg.author.username}! :sunny:`);
         break;
 
       case "love":
