@@ -19,6 +19,7 @@ bot.on("message", msg => {
   if (msg.content.substring(0, 1) == "!") {
 
     let args = msg.content.substring(1).split(" ");
+    let game;
 
     switch (args[0]) {
 
@@ -73,17 +74,17 @@ bot.on("message", msg => {
         break;
 
       case "rock":
-        const game = rockpaperscissors(args[0]);
+        game = rockpaperscissors(args[0]);
         msg.channel.send(`VaqBot chose ${game.opt}. ${msg.author.username} ${game.status}.`)
         break;
 
       case "paper":
-        const game = rockpaperscissors(args[0]);
+        game = rockpaperscissors(args[0]);
         msg.channel.send(`VaqBot chose ${game.opt}. ${msg.author.username} ${game.status}.`)
         break;
 
       case "scissors":
-        const game = rockpaperscissors(args[0]);
+        game = rockpaperscissors(args[0]);
         msg.channel.send(`VaqBot chose ${game.opt}. ${msg.author.username} ${game.status}.`)
         break;
       
