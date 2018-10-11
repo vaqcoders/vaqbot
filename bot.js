@@ -71,6 +71,21 @@ bot.on("message", msg => {
       case "iwannabetheverybest":
         msg.channel.send("LIKE NO ONE EVER WAS!!!:smiley:");
         break;
+
+      case "rock":
+        const game = rockpaperscissors(args[0]);
+        msg.channel.send(`VaqBot chose ${game.opt}. ${msg.author.username} ${game.status}.`)
+        break;
+
+      case "paper":
+        const game = rockpaperscissors(args[0]);
+        msg.channel.send(`VaqBot chose ${game.opt}. ${msg.author.username} ${game.status}.`)
+        break;
+
+      case "scissors":
+        const game = rockpaperscissors(args[0]);
+        msg.channel.send(`VaqBot chose ${game.opt}. ${msg.author.username} ${game.status}.`)
+        break;
       
       case "owo":
         msg.channel.send("uwu");
@@ -100,7 +115,32 @@ bot.on("message", msg => {
 
 // Helper Functions
 const getEmoji = keyword => emoji.filter(item => item.keywords.includes(keyword));
+
 const randSelect = arr => arr[Math.floor(Math.random() * arr.length)];
+
+const rockpaperscissors = choice => {
+  const opt = randSelect([
+    "rock",
+    "paper",
+    "scissors"
+  ]);
+  const dict = {
+    rock: ":punch:",
+    paper: ":hand_splayed:",
+    scissors: ":v:"
+  };
+  if (choice == opt) {
+    return {opt: dict[opt], status: "draw"};
+  } else if (
+    (choice == "rock" && opt == "scissors") ||
+    (choice == "paper" && opt == "rock") ||
+    (choice == "scissors" && opt == "paper")
+  ) {
+    return {opt: dict[opt], status: "won"};
+  } else {
+    return {opt: dict[opt], status: "lost"};
+  }
+};
 
 // This must be this way!
 bot.login(process.env.BOT_TOKEN);
