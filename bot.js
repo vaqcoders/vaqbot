@@ -35,7 +35,7 @@ bot.on("message", msg => {
         break;
 
       case "goodnight":
-        let option = randSelect([
+        let rndMsg = randSelect([
           "Sweet dreams",
           "Good night",
           "\*goodnight kiss\*",
@@ -46,7 +46,7 @@ bot.on("message", msg => {
         break;
         
       case "goodmorning":
-        let option = randSelect([
+        let rndMsg = randSelect([
           "Good morning",
           "Praise the sun",
           "Don't be late to school",
