@@ -20,7 +20,7 @@ bot.on("message", msg => {
 
     let args = msg.content.substring(1).split(" ");
 
-    switch(args[0]) {
+    switch (args[0]) {
 
       case "vaq":
         msg.channel.send("Coders!");
@@ -35,25 +35,25 @@ bot.on("message", msg => {
         break;
 
       case "goodnight":
-        let rndMsg = randSelect([
+        let rndFarwell = randSelect([
           "Sweet dreams",
           "Good night",
           "\*goodnight kiss\*",
           "Sleep tight",
           "Don´t let the vaq bugs bite you"
         ]);
-        msg.channel.send(`${option}, ${msg.author.username}! :sleeping:`);
+        msg.channel.send(`${rndFarwell}, ${msg.author.username}! :sleeping:`);
         break;
         
       case "goodmorning":
-        let rndMsg = randSelect([
+        let rndSalutation = randSelect([
           "Good morning",
           "Praise the sun",
           "Don't be late to school",
           ":rooster: Cockadoodledoo",
           "I am woke"
         ]);
-        msg.channel.send(`${option}, ${msg.author.username}! :sunny:`);
+        msg.channel.send(`${rndSalutation}, ${msg.author.username}! :sunny:`);
         break;
 
       case "love":
