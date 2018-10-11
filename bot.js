@@ -44,7 +44,7 @@ bot.on("message", msg => {
         ]);
         msg.channel.send(`${opt}, ${msg.author.username}! :sleeping:`);
         break;
-        
+
       case "love":
         msg.channel.send(":heart:");
         break;
@@ -60,7 +60,11 @@ bot.on("message", msg => {
       case "iwannabetheverybest":
         msg.channel.send("LIKE NO ONE EVER WAS!!!:smiley:");
         break;
-      
+
+      case "aburr":
+        msg.channel.send("Ethan Davidson is the best and coolest president luhmao xd teehee");
+        break;
+
       /* Never use this lol
       case "10printgoto10":
         msg.channel.send("!10printgoto10");
