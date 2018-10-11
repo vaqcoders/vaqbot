@@ -44,6 +44,17 @@ bot.on("message", msg => {
         ]);
         msg.channel.send(`${opt}, ${msg.author.username}! :sleeping:`);
         break;
+        
+      case "goodmorning":
+        const opt = randSelect([
+          "Good morning",
+          "Praise the sun",
+          "Don't be late to school",
+          ":rooster: Cockadoodledoo"
+          "I am woke"
+        ]);
+        msg.channel.send('${opt}, ${msg.author.username}! :sunny:');
+        break;
 
       case "love":
         msg.channel.send(":heart:");
@@ -59,6 +70,10 @@ bot.on("message", msg => {
 
       case "iwannabetheverybest":
         msg.channel.send("LIKE NO ONE EVER WAS!!!:smiley:");
+        break;
+      
+      case "owo":
+        msg.channel.send("uwu");
         break;
 
       case "aburr":
