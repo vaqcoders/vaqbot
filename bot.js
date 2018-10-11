@@ -35,25 +35,25 @@ bot.on("message", msg => {
         break;
 
       case "goodnight":
-        const opt = randSelect([
+        let option = randSelect([
           "Sweet dreams",
           "Good night",
           "\*goodnight kiss\*",
           "Sleep tight",
           "Don´t let the vaq bugs bite you"
         ]);
-        msg.channel.send(`${opt}, ${msg.author.username}! :sleeping:`);
+        msg.channel.send(`${option}, ${msg.author.username}! :sleeping:`);
         break;
         
       case "goodmorning":
-        const opt = randSelect([
+        let option = randSelect([
           "Good morning",
           "Praise the sun",
           "Don't be late to school",
           ":rooster: Cockadoodledoo",
           "I am woke"
         ]);
-        msg.channel.send(`${opt}, ${msg.author.username}! :sunny:`);
+        msg.channel.send(`${option}, ${msg.author.username}! :sunny:`);
         break;
 
       case "love":
@@ -69,7 +69,7 @@ bot.on("message", msg => {
         break;
 
       case "iwannabetheverybest":
-        msg.channel.send("LIKE NO ONE EVER WAS!!!:smiley:");
+        msg.channel.send("LIKE NO ONE EVER WAS!!! :smiley:");
         break;
 
       case "rock":
@@ -119,7 +119,7 @@ const getEmoji = keyword => emoji.filter(item => item.keywords.includes(keyword)
 const randSelect = arr => arr[Math.floor(Math.random() * arr.length)];
 
 const rockpaperscissors = choice => {
-  const opt = randSelect([
+  const response = randSelect([
     "rock",
     "paper",
     "scissors"
@@ -129,16 +129,16 @@ const rockpaperscissors = choice => {
     paper: ":hand_splayed:",
     scissors: ":v:"
   };
-  if (choice == opt) {
+  if (choice == response) {
     return {opt: dict[opt], status: "draw"};
   } else if (
-    (choice == "rock" && opt == "scissors") ||
-    (choice == "paper" && opt == "rock") ||
-    (choice == "scissors" && opt == "paper")
+    (choice == "rock" && response == "scissors") ||
+    (choice == "paper" && response == "rock") ||
+    (choice == "scissors" && response == "paper")
   ) {
-    return {opt: dict[opt], status: "won"};
+    return {opt: dict[response], status: "won"};
   } else {
-    return {opt: dict[opt], status: "lost"};
+    return {opt: dict[response], status: "lost"};
   }
 };
 
