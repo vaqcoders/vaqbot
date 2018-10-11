@@ -68,6 +68,10 @@ bot.on("message", msg => {
       case "wah":
         msg.channel.send("I'm sorry... :cry:");
         break;
+      
+      case "firstdiscord":
+        msg.channel.send("It wasn't my fault :pensive:");
+        break;
 
       case "iwannabetheverybest":
         msg.channel.send("LIKE NO ONE EVER WAS!!! :smiley:");
