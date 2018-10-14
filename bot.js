@@ -7,6 +7,7 @@ const Discord = require("discord.js");
 const bot = new Discord.Client({autorun: true});
 
 const emoji = require("emoji.json");
+const math = require("mathjs");
 
 bot.on("ready", () => {
   console.log("I am ready!");
@@ -45,7 +46,7 @@ bot.on("message", msg => {
         ]);
         msg.channel.send(`${rndFarwell}, ${msg.author.username}! :sleeping:`);
         break;
-        
+
       case "goodmorning":
         let rndSalutation = randSelect([
           "Good morning",
@@ -68,7 +69,7 @@ bot.on("message", msg => {
       case "wah":
         msg.channel.send("I'm sorry... :cry:");
         break;
-      
+
       case "firstdiscord":
         msg.channel.send("It wasn't my fault :pensive:");
         break;
@@ -91,7 +92,7 @@ bot.on("message", msg => {
         game = rockpaperscissors(args[0]);
         msg.channel.send(`VaqBot chose ${game.opt}. ${msg.author.username} ${game.status}.`)
         break;
-      
+
       case "owo":
         msg.channel.send("uwu");
         break;
@@ -108,6 +109,11 @@ bot.on("message", msg => {
         msg.channel.send(`Here's some ${gimmeFood.name}, ${msg.author.username}. ${emoji[366].char} ${gimmeFood.char}`);
         break;
 
+      case "solve":
+        const expression = args.slice(1).join("");
+        const answer = math.compile(expression).eval();
+        msg.channel.send(answer);
+
       // Just add any case commands if you want to..
 
     }
@@ -121,25 +127,20 @@ const randSelect = arr => arr[Math.floor(Math.random() * arr.length)];
 
 const rockpaperscissors = choice => {
   const response = randSelect([
-    "rock",
-    "paper",
-    "scissors"
+    ["rock", ":punch:"],
+    ["paper", ":hand_splayed:"],
+    ["scissors", ":v:"]
   ]);
-  const dict = {
-    rock: ":punch:",
-    paper: ":hand_splayed:",
-    scissors: ":v:"
-  };
-  if (choice == response) {
-    return {opt: dict[response], status: "tied"};
+  if (choice == response[0]) {
+    return {opt: response[1], status: "tied"};
   } else if (
-    (choice == "rock" && response == "scissors") ||
-    (choice == "paper" && response == "rock") ||
-    (choice == "scissors" && response == "paper")
+    (choice == "rock" && response[0] == "scissors") ||
+    (choice == "paper" && response[0] == "rock") ||
+    (choice == "scissors" && response[0] == "paper")
   ) {
-    return {opt: dict[response], status: "won"};
+    return {opt: response[1], status: "won"};
   } else {
-    return {opt: dict[response], status: "lost"};
+    return {opt: response[1], status: "lost"};
   }
 };
 
