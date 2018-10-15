@@ -20,7 +20,7 @@ bot.on("message", msg => {
   if (msg.content.substring(0, 1) == "!") {
 
     let args = msg.content.substring(1).split(" ");
-    let game;
+    let game, expression, answer;
 
     switch (args[0]) {
 
@@ -110,9 +110,14 @@ bot.on("message", msg => {
         break;
 
       case "solve":
-        const expression = args.slice(1).join("");
-        const answer = math.compile(expression).eval();
+        expression = args.slice(1).join("");
+        answer = math.compile(expression).eval();
         msg.channel.send(answer);
+
+      case "derive":
+        expression = args.slice(1).join("");
+        answer = math.derivative(expression, "x");
+        msg.channel.send(`Derivative of ${expression}:\n${answer.toString()}\n(${answer.toTex()})`);
 
       // Just add any case commands if you want to..
 
