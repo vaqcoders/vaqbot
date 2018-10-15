@@ -113,11 +113,13 @@ bot.on("message", msg => {
         expression = args.slice(1).join("");
         answer = math.compile(expression).eval();
         msg.channel.send(answer);
+        break;
 
       case "derive":
         expression = args.slice(1).join("");
         answer = math.derivative(expression, "x");
         msg.channel.send(`Derivative of \`${expression}\` is\n\`${answer.toString()}\` or\n\`${answer.toTex()}\` in Desmos.`);
+        break;
 
       // Just add any case commands if you want to..
 
