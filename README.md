@@ -6,6 +6,11 @@ Repository for Rancho Alamitos High School Vaqcoders Discord server bot.
 * [VaqBot on Heroku](https://dashboard.heroku.com/apps/vaqbot/)
 * [Bot Advice](https://gist.github.com/missingbinaries/b1e6ed00c25b393116f4d364c9359aac)
 
+### Libraries
+* [matplot](https://github.com/mateogianolio/matplotnode)
+* [emoji](https://github.com/amio/emoji.json)
+* [mathjs](https://github.com/josdejong/mathjs)
+
 ### How Commands Work in bot.js
 * If you read the code in bot.js, you will find an event called "message"
 * Within the event handler, I used a switch/case approach to functioning according to different bot commands
