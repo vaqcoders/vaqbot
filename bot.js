@@ -151,5 +151,22 @@ const rockpaperscissors = choice => {
   }
 };
 
+const getPointsOfExpression = expr => {
+  /*
+  // provide a scope
+const node2 = math.parse('x^a')
+const code2 = node2.compile()
+let scope = {
+    x: 3,
+    a: 2
+}
+code2.eval(scope)  // 9
+
+// change a value in the scope and re-evaluate the node
+scope.a = 3
+code2.eval(scope)  // 27
+*/
+};
+
 // This must be this way!
 bot.login(process.env.BOT_TOKEN);
