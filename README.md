@@ -2,10 +2,11 @@
 Repository for Rancho Alamitos High School Vaqcoders Discord server bot.
 
 ### Libraries
-* [matplot](https://github.com/mateogianolio/matplotnode)
 * [emoji](https://github.com/amio/emoji.json)
 * [mathjs](https://github.com/josdejong/mathjs)
 * [discord.js](https://discord.js.org/#/docs/main/stable/general/welcome)
+* [jsdom](https://github.com/jsdom/jsdom)
+* [d3](https://github.com/d3-node/d3-node)
 
 ### How Commands Work in bot.js
 * If you read the code in bot.js, you will find an event called "message"
