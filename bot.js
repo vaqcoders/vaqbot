@@ -9,6 +9,11 @@ const bot = new Discord.Client({autorun: true});
 const emoji = require("emoji.json");
 const math = require("mathjs");
 
+// Functional Globals
+let meme_phase = 0;
+let meme_user = "";
+let meme_top_text = "";
+
 bot.on("ready", () => {
   console.log("I am ready!");
 });
@@ -97,16 +102,16 @@ bot.on("message", msg => {
         msg.channel.send("uwu");
         break;
 
-      /* Never use this lol
-      case "10printgoto10":
-        msg.channel.send("!10printgoto10");
-        break;
-      */
-
       case "food":
         let gimmePossibleFoods = getEmoji("food");
         let gimmeFood = gimmePossibleFoods[Math.floor(Math.random() * gimmePossibleFoods.length)];
         msg.channel.send(`Here's some ${gimmeFood.name}, ${msg.author.username}. ${emoji[366].char} ${gimmeFood.char}`);
+        break;
+
+      case "meme":
+        meme_phase = 1;
+        meme_user = msg.author.username;
+        msg.channel.send(`@${msg.author.username}, what's the top text?`);
         break;
 
       case "solve":
@@ -123,8 +128,25 @@ bot.on("message", msg => {
 
       // Just add any case commands if you want to..
 
+      /* Never use this lol
+      case "10printgoto10":
+        msg.channel.send("!10printgoto10");
+        break;
+      */
+
     }
   }
+
+  // Extra Conditionals
+  if (meme_phase == 1 && meme_user == msg.author.username) {
+    meme_phase = 2, meme_top_text = msg.content;
+    msg.channel.send(`@${msg.author.username}, what's the bottom text?`);
+  } else if (meme_phase == 2 && meme_user == msg.author.username) {
+    meme_phase = 0, meme_user = "";
+    const gimmeMeme = `@${msg.author.username}, your meme:\n**${meme_top_text.toUpperCase()}**\n${emoji[2].char}\n**${msg.content.toUpperCase()}`;
+    msg.channel.send(gimmeMeme);
+  }
+
 });
 
 // Helper Functions
