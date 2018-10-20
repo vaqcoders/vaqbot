@@ -111,7 +111,6 @@ bot.on("message", msg => {
       case "meme":
         meme_phase = 1;
         meme_user = msg.author.username;
-        msg.channel.send(`@${msg.author.username}, what's the top text?`);
         break;
 
       case "solve":
@@ -139,11 +138,14 @@ bot.on("message", msg => {
 
   // Extra Conditionals
   if (meme_phase == 1 && meme_user == msg.author.username) {
-    meme_phase = 2, meme_top_text = msg.content;
-    msg.channel.send(`@${msg.author.username}, what's the bottom text?`);
+    msg.channel.send(`@${msg.author.username}, what's the top text?`);
+    meme_phase = 2;
   } else if (meme_phase == 2 && meme_user == msg.author.username) {
+    meme_phase = 3, meme_top_text = msg.content;
+    msg.channel.send(`@${msg.author.username}, what's the bottom text?`);
+  } else if (meme_phase == 3 && meme_user == msg.author.username) {
     meme_phase = 0, meme_user = "";
-    const gimmeMeme = `@${msg.author.username}, your meme:\n**${meme_top_text.toUpperCase()}**\n${emoji[2].char}\n**${msg.content.toUpperCase()}`;
+    const gimmeMeme = `@${msg.author.username}, your meme:\n\n**${meme_top_text.toUpperCase()}**\n${emoji[2].char}\n**${msg.content.toUpperCase()}**`;
     msg.channel.send(gimmeMeme);
   }
 
